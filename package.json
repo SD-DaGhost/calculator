@@ -1,0 +1,22 @@
+{
+  "name": "calculator-assignment",
+  "version": "1.0.0",
+  "description": "for-calculating",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aramide231/calculator.git"
+  },
+  "keywords": [
+    "12345"
+  ],
+  "author": "circle 34",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aramide231/calculator/issues"
+  },
+  "homepage": "https://github.com/aramide231/calculator#readme"
+}
