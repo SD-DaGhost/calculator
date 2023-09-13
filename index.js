@@ -65,7 +65,7 @@ squareRoot.addEventListener('click', function () {
     alert('Invalid input for square root')
   }
 })
-});
+
 
 
 // y
