@@ -1,16 +1,17 @@
-.Desktop1 {
+#Desktop1 {
     background: white;
     background: linear-gradient(90deg, rgb(52, 152, 219), rgb(169, 79, 83));
+   
   
 }
-.AndroidSmall1 {
+#AndroidSmall1 {
     padding-top: 303.97px;
-    padding-bottom: 19px;
+    padding-bottom: 20px;
     padding-left: 20px;
-    padding-right: 17px;
+    padding-right: 20px;
     position: absolute;
     background: black;
-    border-radius: 18px;
+    border-radius: 30px;
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-end;
@@ -32,18 +33,7 @@
     text-align: right;
     height: 60px;
     width: 315px;
+   
 
 }
 
-  /* CSS for button animation */
-  button {
-    transition: background-color 0.2s, box-shadow 0.2s;
-  }
-
-  button:hover {
-    background-color: #E0E0E0; /* Change the background color on hover */
-  }
-
-  button:active {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* Add a box-shadow when the button is active (pressed) */
-  }

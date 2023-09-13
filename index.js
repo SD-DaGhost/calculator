@@ -65,3 +65,32 @@ squareRoot.addEventListener('click', function () {
     alert('Invalid input for square root')
   }
 })
+});
+
+
+// y
+document.addEventListener("DOMContentLoaded", function () {
+  var myElement = document.getElementById("Desktop1");
+  var colorButton = document.getElementById("change");
+  var randomColors = ["rgb(52, 152, 219)", "rgb(169, 79, 83)"];
+  var isInitialColor = true; // Flag to track the current state
+
+  // Store the initial color
+  var initialColor = myElement.style.background;
+
+  function toggleBackgroundColor() {
+    if (isInitialColor) {
+      const randomIndex = Math.floor(Math.random() * randomColors.length);
+      const randomColor = randomColors[randomIndex];
+      myElement.style.background = randomColor;
+    } else {
+      myElement.style.background = initialColor;
+    }
+    
+    // Toggle the state flag
+    isInitialColor = !isInitialColor;
+  }
+
+  colorButton.addEventListener("click", toggleBackgroundColor);
+});
+
