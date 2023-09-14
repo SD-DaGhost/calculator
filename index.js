@@ -1,96 +1,111 @@
-const allButtons = document.querySelectorAll('button')
-const display = document.getElementById('display')
-const answerButton = document.getElementById('btn')
-const Clear = document.getElementById('Ac')
-let content = '' // Initialize content as an empty string
+// Select all buttons
+const allButtons = document.querySelectorAll('button');
 
+// Select display element
+const display = document.getElementById('display');
+
+// Select answer button
+const answerButton = document.getElementById('btn');
+
+// Select clear button
+const Clear = document.getElementById('Ac');
+
+// Initialize content variable
+let content = '';
+
+// Add event listener to all buttons
 allButtons.forEach(function (button) {
   button.addEventListener('click', function () {
-    content += button.textContent
+    content += button.textContent;
     if (display) {
-      display.value = content
+      display.value = content;
     }
-  })
-})
+  });
+});
 
+// Add event listener to answer button
 answerButton.addEventListener('click', function () {
   try {
-    const result = eval(content) // Evaluate the expression
-    display.value = result // Display the result
+    const result = eval(content);
+    display.value = result;
   } catch {
-    alert('Invalid expression') // Handle any evaluation errors
+    alert('Invalid expression');
   }
-})
+});
 
-
+// Add event listener to clear button
 Clear.addEventListener('click', function () {
   if (content) {
-    content = ''
+    content = '';
   }
   if ((display.value = 'Ac')) {
-    display.value = ''
+    display.value = '';
   }
-})
+});
 
-const deleteBtn = document.getElementById('delete')
+// Select delete button
+const deleteBtn = document.getElementById('delete');
+
+// Add event listener to delete button
 deleteBtn.addEventListener('click', function () {
-  const display = document.getElementById('display')
+  const display = document.getElementById('display');
   if (display) {
-    // Remove the last character from the content and update the display
-    content = content.slice(0, -1)
-    display.value = content
+    content = content.slice(0, -1);
+    display.value = content;
   }
-})
+});
 
-const percentage = document.getElementById('p')
+// Select percentage button
+const percentage = document.getElementById('p');
+
+// Add event listener to percentage button
 percentage.addEventListener('click', function () {
-  const display = document.getElementById('display')
+  const display = document.getElementById('display');
   if (display && content) {
-    const currentValue = parseFloat(content)
+    const currentValue = parseFloat(content);
     if (!isNaN(currentValue)) {
-      const result = currentValue * (1 / 100)
-      content = result.toString()
-      display.value = content
+      const result = currentValue * (1 / 100);
+      content = result.toString();
+      display.value = content;
     }
   }
-})
-const squareRoot = document.getElementById('squareRoot')
+});
+
+// Select square root button
+const squareRoot = document.getElementById('squareRoot');
+
+// Add event listener to square root button
 squareRoot.addEventListener('click', function () {
-  const currentValue = parseFloat(content) // Parse content as a float
+  const currentValue = parseFloat(content);
   if (!isNaN(currentValue) && currentValue >= 0) {
-    const result = Math.sqrt(currentValue)
-    content = result.toString()
-    display.value = content
+    const result = Math.sqrt(currentValue);
+    content = result.toString();
+    display.value = content;
   } else {
-    alert('Invalid input for square root')
+    alert('Invalid input for square root');
   }
-})
+});
 
-
-
-// y
+// Add event listener for DOMContentLoaded event
 document.addEventListener("DOMContentLoaded", function () {
   var myElement = document.getElementById("Desktop1");
   var colorButton = document.getElementById("change");
   var randomColors = ["rgb(52, 152, 219)", "rgb(169, 79, 83)"];
-  var isInitialColor = true; // Flag to track the current state
-
-  // Store the initial color
+  
+  var isInitialColor = true; 
   var initialColor = myElement.style.background;
 
-  function toggleBackgroundColor() {
-    if (isInitialColor) {
-      const randomIndex = Math.floor(Math.random() * randomColors.length);
-      const randomColor = randomColors[randomIndex];
-      myElement.style.background = randomColor;
-    } else {
-      myElement.style.background = initialColor;
-    }
+   function toggleBackgroundColor() {
+     if (isInitialColor) {
+       const randomIndex = Math.floor(Math.random() * randomColors.length);
+       const randomColor = randomColors[randomIndex];
+       myElement.style.background = randomColor;
+     } else {
+       myElement.style.background = initialColor;
+     }
     
-    // Toggle the state flag
-    isInitialColor = !isInitialColor;
-  }
+     isInitialColor = !isInitialColor;
+   }
 
-  colorButton.addEventListener("click", toggleBackgroundColor);
+   colorButton.addEventListener("click", toggleBackgroundColor);
 });
-
